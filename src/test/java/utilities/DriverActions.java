@@ -183,7 +183,7 @@ public class DriverActions {
                 }
             }
         } catch (Exception ex) {
-            result = null;
+            throw ex;
         }
         return result;
     }
@@ -263,5 +263,8 @@ public class DriverActions {
                 webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
     }
 
+    public void waitUntilUrlChangesTo(String url){
+        wait.until(ExpectedConditions.urlToBe(url));
+    }
 
 }

@@ -17,6 +17,9 @@ public class ProductsList {
     @FindBy(xpath="//*[@id=\"container\"]/div/div[3]/div[1]/div[1]/div/div[1]/div/div/section")
     public WebElement categories;
 
+    @FindBy(xpath="//a[@title=\"Mobiles\"]" )
+    public WebElement categoryMobile;
+
     @FindBy(xpath = "//*[@id=\"container\"]/div/div[3]/div[1]/div[1]/div/div[1]/div/section[3]")
     public WebElement brandFilter;
 
@@ -26,19 +29,20 @@ public class ProductsList {
     @FindBy(xpath = "//*[@id=\"container\"]/div/div[3]/div[1]/div[2]/div[1]/div/div/div[3]")
     public WebElement sortByDiv;
 
-    //@FindBy(xpath = "//*[@id=\"container\"]/div/div[3]/div")
-    //public WebElement prdtsLst;
+    @FindBy(xpath = "//*[@id=\"container\"]/div/div[3]/div/div[2]")
+    //*[@id="container"]/div/div[3]/div/div[2]
+    public WebElement prdtsLst;
 
     //@FindBy(className = "cPHDOP col-12-12")
     //public List<WebElement> prdtsLst;
 
-    @FindBy(css = ".cPHDOP.col-12-12")
-    public List<WebElement> prdtsLst;
+    //@FindBy(css = ".cPHDOP.col-12-12")
+    //public List<WebElement> prdtsLst;
 
 
     public ProductsList(WebDriver driver){
         this.driver = driver;
-        PageFactory.initElements(new AjaxElementLocatorFactory(this.driver, 15), this);
+        PageFactory.initElements(new AjaxElementLocatorFactory(this.driver, 30), this);
     }
 
 
